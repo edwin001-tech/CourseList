@@ -11,8 +11,10 @@ public class Course {
         this.courseImage = courseImage;
     }
 
+
+
     public int getImageResourceId(Context context){
-        return context.getResources().getIdentifier(this.courseName, "drawable", context.getPackageName());
+        return context.getResources().getIdentifier(this.courseImage, "drawable", context.getPackageName());
 
     }
 
