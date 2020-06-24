@@ -1,6 +1,7 @@
 package com.example.courselistfragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.fragment.app.ListFragment;
 import com.example.courselistfragment.data.Course;
 import com.example.courselistfragment.data.CourseArrayAdapter;
 import com.example.courselistfragment.data.CourseData;
+import com.example.courselistfragment.util.ScreenUtility;
 
 import java.util.List;
 
@@ -26,6 +28,9 @@ public class myFragment extends ListFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ScreenUtility screenUtility = new ScreenUtility(getActivity());
+        Log.d("WIDTH", String.valueOf(screenUtility.getDpWidth()));
 
         CourseArrayAdapter adapter = new CourseArrayAdapter(getActivity(),
                 R.layout.course_listitem, courses);
